@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="client-thrift" targetName="client-thrift" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ddbdb0dc-4e12-4856-b487-b06e083dd34e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ProjectId" id="1iuqZEv5r9VRwcdzW46NZ5Wehzg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/client" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="server-thrift" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="server-thrift" TARGET_NAME="server-thrift" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="server-thrift" RUN_TARGET_NAME="server-thrift">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ddbdb0dc-4e12-4856-b487-b06e083dd34e" name="Default Changelist" comment="" />
+      <created>1602767877810</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602767877810</updated>
+      <workItem from="1602767880099" duration="14550000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="383" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602785760601">
+      <screen x="0" y="32" width="1858" height="1048" />
+    </state>
+    <state x="383" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.32.1858.1048@0.32.1858.1048" timestamp="1602785760601" />
+    <state x="285" y="281" key="FileChooserDialogImpl" timestamp="1602785042890">
+      <screen x="0" y="32" width="1858" height="1048" />
+    </state>
+    <state x="285" y="281" key="FileChooserDialogImpl/0.32.1858.1048@0.32.1858.1048" timestamp="1602785042890" />
+    <state width="1800" height="259" key="GridCell.Tab.0.bottom" timestamp="1602785670489">
+      <screen x="0" y="32" width="1858" height="1048" />
+    </state>
+    <state width="1800" height="259" key="GridCell.Tab.0.bottom/0.32.1858.1048@0.32.1858.1048" timestamp="1602785670489" />
+    <state width="1800" height="259" key="GridCell.Tab.0.center" timestamp="1602785670488">
+      <screen x="0" y="32" width="1858" height="1048" />
+    </state>
+    <state width="1800" height="259" key="GridCell.Tab.0.center/0.32.1858.1048@0.32.1858.1048" timestamp="1602785670488" />
+    <state width="1800" height="259" key="GridCell.Tab.0.left" timestamp="1602785670488">
+      <screen x="0" y="32" width="1858" height="1048" />
+    </state>
+    <state width="1800" height="259" key="GridCell.Tab.0.left/0.32.1858.1048@0.32.1858.1048" timestamp="1602785670488" />
+    <state width="1800" height="259" key="GridCell.Tab.0.right" timestamp="1602785670489">
+      <screen x="0" y="32" width="1858" height="1048" />
+    </state>
+    <state width="1800" height="259" key="GridCell.Tab.0.right/0.32.1858.1048@0.32.1858.1048" timestamp="1602785670489" />
+    <state x="271" y="103" width="1316" height="912" key="SettingsEditor" timestamp="1602784868354">
+      <screen x="0" y="32" width="1858" height="1048" />
+    </state>
+    <state x="271" y="103" width="1316" height="912" key="SettingsEditor/0.32.1858.1048@0.32.1858.1048" timestamp="1602784868354" />
+  </component>
+</project>
