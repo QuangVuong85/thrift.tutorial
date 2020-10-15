@@ -6,7 +6,7 @@
  */
 #include "Calculator.h"
 
-namespace tutorial {
+namespace tutorialmath {
 
 
 Calculator_ping_args::~Calculator_ping_args() noexcept {
@@ -822,7 +822,7 @@ bool CalculatorProcessor::dispatchCall(::apache::thrift::protocol::TProtocol* ip
   ProcessMap::iterator pfn;
   pfn = processMap_.find(fname);
   if (pfn == processMap_.end()) {
-    return  ::shared::SharedServiceProcessor::dispatchCall(iprot, oprot, fname, seqid, callContext);
+    return  ::sharedmath::SharedServiceProcessor::dispatchCall(iprot, oprot, fname, seqid, callContext);
   }
   (this->*(pfn->second))(seqid, iprot, oprot, callContext);
   return true;

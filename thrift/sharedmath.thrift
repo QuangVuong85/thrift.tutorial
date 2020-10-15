@@ -1,4 +1,4 @@
-namespace cpp shared
+namespace cpp sharedmath
 
 struct SharedStruct {
     1: i32 key

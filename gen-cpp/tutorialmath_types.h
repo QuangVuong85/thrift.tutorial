@@ -4,8 +4,8 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-#ifndef tutorial_TYPES_H
-#define tutorial_TYPES_H
+#ifndef tutorialmath_TYPES_H
+#define tutorialmath_TYPES_H
 
 #include <iosfwd>
 
@@ -17,10 +17,10 @@
 
 #include <functional>
 #include <memory>
-#include "shared_types.h"
+#include "sharedmath_types.h"
 
 
-namespace tutorial {
+namespace tutorialmath {
 
 struct Operation {
   enum type {

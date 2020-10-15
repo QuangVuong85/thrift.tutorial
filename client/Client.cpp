@@ -11,8 +11,8 @@ using namespace apache::thrift;
 using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
 
-using namespace tutorial;
-using namespace shared;
+using namespace tutorialmath;
+using namespace sharedmath;
 
 int main() {
     std::shared_ptr<TTransport> socket(new TSocket("localhost", 9999));
@@ -47,6 +47,12 @@ int main() {
         work.num2 = 10;
         int32_t diff = client.calculate(1, work);
         cout << "15 - 10 = " << diff << endl;
+
+        work.op = Operation::MULTIPLY;
+        work.num1 = 8;
+        work.num2 = 5;
+        int32_t mul = client.calculate(1, work);
+        cout << "8 * 5 = " << mul << endl;
 
         // Note that C++ uses return by reference for complex types to avoid
         // costly copy construction

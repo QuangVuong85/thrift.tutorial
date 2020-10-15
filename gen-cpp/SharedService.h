@@ -10,9 +10,9 @@
 #include <thrift/TDispatchProcessor.h>
 #include <thrift/async/TConcurrentClientSyncInfo.h>
 #include <memory>
-#include "shared_types.h"
+#include "sharedmath_types.h"
 
-namespace shared {
+namespace sharedmath {
 
 #ifdef _MSC_VER
   #pragma warning( push )

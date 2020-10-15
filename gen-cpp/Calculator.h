@@ -10,17 +10,17 @@
 #include <thrift/TDispatchProcessor.h>
 #include <thrift/async/TConcurrentClientSyncInfo.h>
 #include <memory>
-#include "tutorial_types.h"
+#include "tutorialmath_types.h"
 #include "SharedService.h"
 
-namespace tutorial {
+namespace tutorialmath {
 
 #ifdef _MSC_VER
   #pragma warning( push )
   #pragma warning (disable : 4250 ) //inheriting methods via dominance 
 #endif
 
-class CalculatorIf : virtual public  ::shared::SharedServiceIf {
+class CalculatorIf : virtual public  ::sharedmath::SharedServiceIf {
  public:
   virtual ~CalculatorIf() {}
   virtual void ping() = 0;
@@ -29,14 +29,14 @@ class CalculatorIf : virtual public  ::shared::SharedServiceIf {
   virtual void zip() = 0;
 };
 
-class CalculatorIfFactory : virtual public  ::shared::SharedServiceIfFactory {
+class CalculatorIfFactory : virtual public  ::sharedmath::SharedServiceIfFactory {
  public:
   typedef CalculatorIf Handler;
 
   virtual ~CalculatorIfFactory() {}
 
   virtual CalculatorIf* getHandler(const ::apache::thrift::TConnectionInfo& connInfo) = 0;
-  virtual void releaseHandler( ::shared::SharedServiceIf* /* handler */) = 0;
+  virtual void releaseHandler( ::sharedmath::SharedServiceIf* /* handler */) = 0;
 };
 
 class CalculatorIfSingletonFactory : virtual public CalculatorIfFactory {
@@ -47,13 +47,13 @@ class CalculatorIfSingletonFactory : virtual public CalculatorIfFactory {
   virtual CalculatorIf* getHandler(const ::apache::thrift::TConnectionInfo&) {
     return iface_.get();
   }
-  virtual void releaseHandler( ::shared::SharedServiceIf* /* handler */) {}
+  virtual void releaseHandler( ::sharedmath::SharedServiceIf* /* handler */) {}
 
  protected:
   ::std::shared_ptr<CalculatorIf> iface_;
 };
 
-class CalculatorNull : virtual public CalculatorIf , virtual public  ::shared::SharedServiceNull {
+class CalculatorNull : virtual public CalculatorIf , virtual public  ::sharedmath::SharedServiceNull {
  public:
   virtual ~CalculatorNull() {}
   void ping() {
@@ -413,11 +413,11 @@ class Calculator_zip_pargs {
 
 };
 
-class CalculatorClient : virtual public CalculatorIf, public  ::shared::SharedServiceClient {
+class CalculatorClient : virtual public CalculatorIf, public  ::sharedmath::SharedServiceClient {
  public:
   CalculatorClient(std::shared_ptr< ::apache::thrift::protocol::TProtocol> prot) :
-     ::shared::SharedServiceClient(prot, prot) {}
-  CalculatorClient(std::shared_ptr< ::apache::thrift::protocol::TProtocol> iprot, std::shared_ptr< ::apache::thrift::protocol::TProtocol> oprot) :     ::shared::SharedServiceClient(iprot, oprot) {}
+     ::sharedmath::SharedServiceClient(prot, prot) {}
+  CalculatorClient(std::shared_ptr< ::apache::thrift::protocol::TProtocol> iprot, std::shared_ptr< ::apache::thrift::protocol::TProtocol> oprot) :     ::sharedmath::SharedServiceClient(iprot, oprot) {}
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> getInputProtocol() {
     return piprot_;
   }
@@ -437,7 +437,7 @@ class CalculatorClient : virtual public CalculatorIf, public  ::shared::SharedSe
   void send_zip();
 };
 
-class CalculatorProcessor : public  ::shared::SharedServiceProcessor {
+class CalculatorProcessor : public  ::sharedmath::SharedServiceProcessor {
  protected:
   ::std::shared_ptr<CalculatorIf> iface_;
   virtual bool dispatchCall(::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, const std::string& fname, int32_t seqid, void* callContext);
@@ -451,7 +451,7 @@ class CalculatorProcessor : public  ::shared::SharedServiceProcessor {
   void process_zip(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   CalculatorProcessor(::std::shared_ptr<CalculatorIf> iface) :
-     ::shared::SharedServiceProcessor(iface),
+     ::sharedmath::SharedServiceProcessor(iface),
     iface_(iface) {
     processMap_["ping"] = &CalculatorProcessor::process_ping;
     processMap_["add"] = &CalculatorProcessor::process_add;
@@ -473,12 +473,12 @@ class CalculatorProcessorFactory : public ::apache::thrift::TProcessorFactory {
   ::std::shared_ptr< CalculatorIfFactory > handlerFactory_;
 };
 
-class CalculatorMultiface : virtual public CalculatorIf, public  ::shared::SharedServiceMultiface {
+class CalculatorMultiface : virtual public CalculatorIf, public  ::sharedmath::SharedServiceMultiface {
  public:
   CalculatorMultiface(std::vector<std::shared_ptr<CalculatorIf> >& ifaces) : ifaces_(ifaces) {
     std::vector<std::shared_ptr<CalculatorIf> >::iterator iter;
     for (iter = ifaces.begin(); iter != ifaces.end(); ++iter) {
-       ::shared::SharedServiceMultiface::add(*iter);
+       ::sharedmath::SharedServiceMultiface::add(*iter);
     }
   }
   virtual ~CalculatorMultiface() {}
@@ -486,7 +486,7 @@ class CalculatorMultiface : virtual public CalculatorIf, public  ::shared::Share
   std::vector<std::shared_ptr<CalculatorIf> > ifaces_;
   CalculatorMultiface() {}
   void add(::std::shared_ptr<CalculatorIf> iface) {
-     ::shared::SharedServiceMultiface::add(iface);
+     ::sharedmath::SharedServiceMultiface::add(iface);
     ifaces_.push_back(iface);
   }
  public:
@@ -531,11 +531,11 @@ class CalculatorMultiface : virtual public CalculatorIf, public  ::shared::Share
 // The 'concurrent' client is a thread safe client that correctly handles
 // out of order responses.  It is slower than the regular client, so should
 // only be used when you need to share a connection among multiple threads
-class CalculatorConcurrentClient : virtual public CalculatorIf, public  ::shared::SharedServiceConcurrentClient {
+class CalculatorConcurrentClient : virtual public CalculatorIf, public  ::sharedmath::SharedServiceConcurrentClient {
  public:
   CalculatorConcurrentClient(std::shared_ptr< ::apache::thrift::protocol::TProtocol> prot, std::shared_ptr<::apache::thrift::async::TConcurrentClientSyncInfo> sync) :
-     ::shared::SharedServiceConcurrentClient(prot, prot, sync) {}
-  CalculatorConcurrentClient(std::shared_ptr< ::apache::thrift::protocol::TProtocol> iprot, std::shared_ptr< ::apache::thrift::protocol::TProtocol> oprot, std::shared_ptr<::apache::thrift::async::TConcurrentClientSyncInfo> sync) :     ::shared::SharedServiceConcurrentClient(iprot, oprot, sync) {}
+     ::sharedmath::SharedServiceConcurrentClient(prot, prot, sync) {}
+  CalculatorConcurrentClient(std::shared_ptr< ::apache::thrift::protocol::TProtocol> iprot, std::shared_ptr< ::apache::thrift::protocol::TProtocol> oprot, std::shared_ptr<::apache::thrift::async::TConcurrentClientSyncInfo> sync) :     ::sharedmath::SharedServiceConcurrentClient(iprot, oprot, sync) {}
   std::shared_ptr< ::apache::thrift::protocol::TProtocol> getInputProtocol() {
     return piprot_;
   }

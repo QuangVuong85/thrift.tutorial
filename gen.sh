@@ -1,1 +1,1 @@
-thrift -r --gen cpp thrift/tutorial.thrift
+thrift -r --gen cpp thrift/tutorialmath.thrift

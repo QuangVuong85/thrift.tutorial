@@ -6,7 +6,7 @@
  */
 #include "SharedService.h"
 
-namespace shared {
+namespace sharedmath {
 
 
 SharedService_getStruct_args::~SharedService_getStruct_args() noexcept {

@@ -4,13 +4,13 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-#include "shared_constants.h"
+#include "sharedmath_constants.h"
 
-namespace shared {
+namespace sharedmath {
 
-const sharedConstants g_shared_constants;
+const sharedmathConstants g_sharedmath_constants;
 
-sharedConstants::sharedConstants() {
+sharedmathConstants::sharedmathConstants() {
 }
 
 } // namespace

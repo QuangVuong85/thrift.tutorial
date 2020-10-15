@@ -12,7 +12,7 @@ using namespace ::apache::thrift::protocol;
 using namespace ::apache::thrift::transport;
 using namespace ::apache::thrift::server;
 
-using namespace  ::shared;
+using namespace  ::sharedmath;
 
 class SharedServiceHandler : virtual public SharedServiceIf {
  public:

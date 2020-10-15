@@ -15,9 +15,9 @@
 *
 */
 
-include "shared.thrift"
+include "sharedmath.thrift"
 
-namespace cpp tutorial
+namespace cpp tutorialmath
 
 typedef i32 MyInteger
 
@@ -43,7 +43,7 @@ exception InvalidOperation {
     2: string why
 }
 
-service Calculator extends shared.SharedService {
+service Calculator extends sharedmath.SharedService {
     void ping(),
     i32 add(1:i32 num1, 2:i32 num2),
     i32 calculate(1:i32 logid, 2:Work w) throws (1:InvalidOperation ouch),

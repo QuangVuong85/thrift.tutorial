@@ -18,8 +18,8 @@ using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
 using namespace apache::thrift::server;
 
-using namespace tutorial;
-using namespace shared;
+using namespace tutorialmath;
+using namespace sharedmath;
 
 class CalculatorHandler : public CalculatorIf {
 public:
@@ -97,7 +97,7 @@ public:
         return new CalculatorHandler;
     }
 
-    void releaseHandler(::shared::SharedServiceIf *handler) override {
+    void releaseHandler(::sharedmath::SharedServiceIf *handler) override {
         delete handler;
     }
 };

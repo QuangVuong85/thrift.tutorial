@@ -12,7 +12,7 @@ using namespace ::apache::thrift::protocol;
 using namespace ::apache::thrift::transport;
 using namespace ::apache::thrift::server;
 
-using namespace  ::tutorial;
+using namespace  ::tutorialmath;
 
 class CalculatorHandler : virtual public CalculatorIf {
  public:

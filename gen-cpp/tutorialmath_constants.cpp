@@ -4,13 +4,13 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-#include "tutorial_constants.h"
+#include "tutorialmath_constants.h"
 
-namespace tutorial {
+namespace tutorialmath {
 
-const tutorialConstants g_tutorial_constants;
+const tutorialmathConstants g_tutorialmath_constants;
 
-tutorialConstants::tutorialConstants() {
+tutorialmathConstants::tutorialmathConstants() {
   INT32CONSTANT = 9853;
 
   MAPCONSTANT.insert(std::make_pair("goodnight", "moon"));
