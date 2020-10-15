@@ -1,0 +1,4 @@
+/opt/clion-2020.1.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/cc -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /home/vuongdq85/cpp/thrift.tutorial/client
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/vuongdq85/cpp/thrift.tutorial/client/cmake-build-debug
